@@ -1,0 +1,182 @@
+/* 
+  Localizable.strings
+  Coashak
+
+  Created by Mohamed Magdy on 18/01/2025.
+  
+*/
+
+
+/* OnBoardingView Localization */
+"Welcome to our app!" = "مرحبًا بك في تطبيقنا!";
+"We Hope You To Be Fit." = "نأمل أن تكون بصحه جيده.";
+"Let's get you set up." = "دعنا نجهزك.";
+"Continue" = "استمر";
+"Get Started" = "ابدأ";
+"please choose" = "يرجى الاختيار";
+
+
+/* SignUpView Localization */
+"First Name" = "الاسم الأول";
+"Last Name" = "الاسم الأخير";
+"Email" = "البريد الإلكتروني";
+"Password" = "كلمة المرور";
+"Confirm Password" = "تأكيد كلمة المرور";
+"Gender" = "الجنس";
+"Male" = "ذكر";
+"Female" = "أنثى";
+"Choose user type" = "اختر نوع المستخدم";
+"Client" = "عميل";
+"Trainer" = "مدرب";
+"Phone Number" = "رقم الهاتف";
+"Date of Birth" = "تاريخ الميلاد";
+"Create account" = "إنشاء حساب";
+"Success" = "نجاح";
+"Verification" = "التحقق";
+"Error" = "خطأ";
+"Try Again" = "حاول مرة أخرى";
+"Signup with" = "اشترك باستخدام";
+
+/* Arabic Localization */
+"Email" = "البريد الإلكتروني";
+"Password" = "كلمة المرور";
+"Forget Password?" = "هل نسيت كلمة المرور؟";
+"Log In" = "تسجيل الدخول";
+"Success" = "نجاح";
+"Failed" = "فشل";
+"OK" = "موافق";
+"Signup with" = "اشترك باستخدام";
+
+
+/* Arabic Localization */
+"Confirm Your Email" = "تأكيد بريدك الإلكتروني";
+"Please enter the code that was sent to" = "يرجى إدخال الرمز الذي تم إرساله إلى";
+"Enter OTP" = "أدخل رمز التحقق";
+"Resend Code" = "إعادة إرسال الرمز";
+"Verify" = "تحقق";
+"Success" = "نجاح";
+"Failed" = "فشل";
+"OK" = "موافق";
+
+
+/* Arabic Localization */
+"Code Verification" = "التحقق من الرمز";
+"please enter the  6-digit number \nsent to your email" = "يرجى إدخال الرقم المكون من 6 أرقام \nالمرسل إلى بريدك الإلكتروني";
+"code" = "الرمز";
+"Resend Code" = "إعادة إرسال الرمز";
+"Continue" = "متابعة";
+
+/* Arabic Localization */
+"Create New Password" = "إنشاء كلمة مرور جديدة";
+"please enter your new password " = "يرجى إدخال كلمة المرور الجديدة";
+"Password" = "كلمة المرور";
+"Confirm Password" = "تأكيد كلمة المرور";
+"Save" = "حفظ";
+"Success" = "نجاح";
+"Failed" = "فشل";
+"Ok" = "موافق";
+
+
+/* trainee detail Localization */
+"What are your goal ?" = "ما هو هدفك؟";
+"Lose Weight" = "فقدان الوزن";
+"Gain Muscles" = "زيادة العضلات";
+"Weight-lifting" = "رفع الأثقال";
+"Diet" = "حمية";
+"Other" = "أخرى";
+"Type here" = "اكتب هنا";
+"Next" = "التالي";
+"What is your current fitness level ?" = "ما هو مستوى لياقتك الحالي؟";
+"Beginner" = "مبتدئ";
+"Intermediate" = "متوسط";
+"Advanced" = "متقدم";
+"What is your age?" = "ما هو عمرك؟";
+"Your age helps us tailor personalized fitness recommendations just for you!" = "عمرك يساعدنا في تقديم توصيات لياقة شخصية لك!";
+"What is your height?" = "ما هو طولك؟";
+"What is your weight?" = "ما هو وزنك؟";
+"Select Your Height" = "اختر طولك";
+"Select Your Weight" = "اختر وزنك";
+"Do you have any health conditions?" = "هل لديك أي حالات صحية؟";
+"Yes" = "نعم";
+"No" = "لا";
+"Select Health Conditions" = "اختر الحالات الصحية";
+"Diabetes" = "السكري";
+"Asthma" = "الربو";
+"Heart Conditions" = "حالات القلب";
+"Do you have any allergies?" = "هل لديك أي حساسية؟";
+"Select Allergies" = "اختر الحساسية";
+"Pollen" = "حبوب اللقاح";
+"Dust" = "الغبار";
+"Food" = "طعام";
+"Medicine" = "دواء";
+
+
+/* trainee image Localization */
+"Upload your profile. (Optional)" = "قم بتحميل ملفك الشخصي. (اختياري)";
+"Upload" = "تحميل";
+"Next" = "التالي";
+"Step 5 of 6" = "الخطوة 5 من 6";
+"Choose Photo" = "اختر صورة";
+"Camera" = "الكاميرا";
+"Photo Library" = "مكتبة الصور";
+"Cancel" = "إلغاء";
+
+
+/* trainer detail Localization */
+"Create Trainer Profile" = "إنشاء ملف المدرب";
+"Upload" = "تحميل";
+"Bio" = "السيرة الذاتية";
+"Type here...." = "اكتب هنا....";
+"Certificates" = "الشهادات";
+"Certificate Name" = "اسم الشهادة";
+"Certificate File" = "ملف الشهادة";
+"Please press here to add a file" = "يرجى الضغط هنا لإضافة ملف";
+"Url" = "الرابط";
+"Type here" = "اكتب هنا";
+"Expiry Date" = "تاريخ الانتهاء";
+"Choose" = "اختر";
+"Years of Experience" = "سنوات الخبرة";
+"1-2 Years" = "1-2 سنوات";
+"3-5 Years" = "3-5 سنوات";
+"5+ Years" = "5+ سنوات";
+"Areas of Expertise" = "مجالات الخبرة";
+"Fitness" = "اللياقة البدنية";
+"Nutrition" = "التغذية";
+"Yoga" = "اليوغا";
+"Strength Training" = "تدريب القوة";
+"Availability" = "التوفر";
+"Save" = "حفظ";
+"Choose Photo" = "اختر صورة";
+"Camera" = "الكاميرا";
+"Photo Library" = "مكتبة الصور";
+"Cancel" = "إلغاء";
+
+
+/* Arabic Localization */
+"Calories" = "السعرات الحرارية";
+"Workouts" = "التمارين";
+"Minutes" = "الدقائق";
+"Statistics" = "الإحصائيات";
+"Edit Profile" = "تعديل الملف الشخصي";
+"Subscription Plan" = "خطة الاشتراك";
+"Nutrition Plan" = "خطة التغذية";
+"Logout" = "تسجيل الخروج";
+
+
+/* edit trainee profile Localization */
+"Personal Information" = "المعلومات الشخصية";
+"Name" = "الاسم";
+"Gender" = "الجنس";
+"Birthday" = "تاريخ الميلاد";
+"Email" = "البريد الإلكتروني";
+"Height" = "الطول";
+"Weight" = "الوزن";
+"Goal" = "الهدف";
+"Fitness Level" = "مستوى اللياقة";
+"Save" = "حفظ";
+"Edit Profile" = "تعديل الملف الشخصي";
+"Edit" = "تعديل";
+"Choose Photo" = "اختر صورة";
+"Camera" = "الكاميرا";
+"Photo Library" = "مكتبة الصور";
+"Cancel" = "إلغاء";

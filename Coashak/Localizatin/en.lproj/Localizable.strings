@@ -1,0 +1,189 @@
+/* 
+  Localizable.strings
+  Coashak
+
+  Created by Mohamed Magdy on 18/01/2025.
+  
+*/
+
+
+/* OnBoardingView Localization */
+"Welcome to our app!" = "Welcome to our app!";
+"We Hope You To Be Fit." = "We Hope You To Be Fit.";
+"Let's get you set up." = "Let's get you set up.";
+"Continue" = "Continue";
+"Get Started" = "Get Started";
+"please choose" = "Please choose";
+
+/* SignUpView Localization */
+"First Name" = "First Name";
+"Last Name" = "Last Name";
+"Email" = "Email";
+"Password" = "Password";
+"Confirm Password" = "Confirm Password";
+"Gender" = "Gender";
+"Male" = "Male";
+"Female" = "Female";
+"Choose user type" = "Choose user type";
+"Client" = "Client";
+"Trainer" = "Trainer";
+"Phone Number" = "Phone Number";
+"Date of Birth" = "Date of Birth";
+"Create account" = "Create account";
+"Success" = "Success";
+"Verification" = "Verification";
+"Error" = "Error";
+"Try Again" = "Try Again";
+"Signup with" = "Signup with";
+
+
+/* login Localization */
+"Email" = "Email";
+"Password" = "Password";
+"Forget Password?" = "Forget Password?";
+"Log In" = "Log In";
+"Success" = "Success";
+"Failed" = "Failed";
+"OK" = "OK";
+"Signup with" = "Signup with";
+
+
+/* English Localization */
+"Forget Password" = "Forget Password";
+"please enter you email adress to send verfication code" = "Please enter your email address to send verification code";
+"Email" = "Email";
+"Continue" = "Continue";
+
+
+
+
+/* English Localization */
+"Confirm Your Email" = "Confirm Your Email";
+"Please enter the code that was sent to" = "Please enter the code that was sent to";
+"Enter OTP" = "Enter OTP";
+"Resend Code" = "Resend Code";
+"Verify" = "Verify";
+"Success" = "Success";
+"Failed" = "Failed";
+"OK" = "OK";
+
+/* email verf Localization */
+"Code Verification" = "Code Verification";
+"please enter the  6-digit number \nsent to your email" = "Please enter the 6-digit number \nsent to your email";
+"code" = "Code";
+"Resend Code" = "Resend Code";
+"Continue" = "Continue";
+
+
+/* pass restored Localization */
+"Create New Password" = "Create New Password";
+"please enter your new password " = "Please enter your new password";
+"Password" = "Password";
+"Confirm Password" = "Confirm Password";
+"Save" = "Save";
+"Success" = "Success";
+"Failed" = "Failed";
+"Ok" = "OK";
+
+
+/* trainee detail Localization */
+"What are your goal ?" = "What is your goal?";
+"Lose Weight" = "Lose Weight";
+"Gain Muscles" = "Gain Muscles";
+"Weight-lifting" = "Weight-lifting";
+"Diet" = "Diet";
+"Other" = "Other";
+"Type here" = "Type here";
+"Next" = "Next";
+"What is your current fitness level ?" = "What is your current fitness level?";
+"Beginner" = "Beginner";
+"Intermediate" = "Intermediate";
+"Advanced" = "Advanced";
+"What is your age?" = "What is your age?";
+"Your age helps us tailor personalized fitness recommendations just for you!" = "Your age helps us tailor personalized fitness recommendations just for you!";
+"What is your height?" = "What is your height?";
+"What is your weight?" = "What is your weight?";
+"Select Your Height" = "Select Your Height";
+"Select Your Weight" = "Select Your Weight";
+"Do you have any health conditions?" = "Do you have any health conditions?";
+"Yes" = "Yes";
+"No" = "No";
+"Select Health Conditions" = "Select Health Conditions";
+"Diabetes" = "Diabetes";
+"Asthma" = "Asthma";
+"Heart Conditions" = "Heart Conditions";
+"Do you have any allergies?" = "Do you have any allergies?";
+"Select Allergies" = "Select Allergies";
+"Pollen" = "Pollen";
+"Dust" = "Dust";
+"Food" = "Food";
+"Medicine" = "Medicine";
+
+
+/* trainee image Localization */
+"Upload your profile. (Optional)" = "Upload your profile. (Optional)";
+"Upload" = "Upload";
+"Next" = "Next";
+"Step 5 of 6" = "Step 5 of 6";
+"Choose Photo" = "Choose Photo";
+"Camera" = "Camera";
+"Photo Library" = "Photo Library";
+"Cancel" = "Cancel";
+
+/* trainer detail Localization */
+"Create Trainer Profile" = "Create Trainer Profile";
+"Upload" = "Upload";
+"Bio" = "Bio";
+"Type here...." = "Type here....";
+"Certificates" = "Certificates";
+"Certificate Name" = "Certificate Name";
+"Certificate File" = "Certificate File";
+"Please press here to add a file" = "Please press here to add a file";
+"Url" = "Url";
+"Type here" = "Type here";
+"Expiry Date" = "Expiry Date";
+"Choose" = "Choose";
+"Years of Experience" = "Years of Experience";
+"1-2 Years" = "1-2 Years";
+"3-5 Years" = "3-5 Years";
+"5+ Years" = "5+ Years";
+"Areas of Expertise" = "Areas of Expertise";
+"Fitness" = "Fitness";
+"Nutrition" = "Nutrition";
+"Yoga" = "Yoga";
+"Strength Training" = "Strength Training";
+"Availability" = "Availability";
+"Save" = "Save";
+"Choose Photo" = "Choose Photo";
+"Camera" = "Camera";
+"Photo Library" = "Photo Library";
+"Cancel" = "Cancel";
+
+
+/* trainee profile Localization */
+"Calories" = "Calories";
+"Workouts" = "Workouts";
+"Minutes" = "Minutes";
+"Statistics" = "Statistics";
+"Edit Profile" = "Edit Profile";
+"Subscription Plan" = "Subscription Plan";
+"Nutrition Plan" = "Nutrition Plan";
+"Logout" = "Logout";
+
+/* edit trainee profile Localization */
+"Personal Information" = "Personal Information";
+"Name" = "Name";
+"Gender" = "Gender";
+"Birthday" = "Birthday";
+"Email" = "Email";
+"Height" = "Height";
+"Weight" = "Weight";
+"Goal" = "Goal";
+"Fitness Level" = "Fitness Level";
+"Save" = "Save";
+"Edit Profile" = "Edit Profile";
+"Edit" = "Edit";
+"Choose Photo" = "Choose Photo";
+"Camera" = "Camera";
+"Photo Library" = "Photo Library";
+"Cancel" = "Cancel";
