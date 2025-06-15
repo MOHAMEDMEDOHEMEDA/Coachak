@@ -15,15 +15,15 @@ import Firebase
 struct CoashakApp: App {
     
     init() {
-            FirebaseApp.configure()
-        }
-
-
-
+        FirebaseApp.configure()
+    }
+    
+    
+    
     var body: some Scene {
         WindowGroup {
-                    OnBoardingView()
-                        .environmentObject(AuthViewModel()) 
-                }
+            OnBoardingView()
+                .environmentObject(AuthViewModel())
+        }
     }
 }

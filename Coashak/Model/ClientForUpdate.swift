@@ -7,16 +7,13 @@
 
 
 struct Client: Codable {
-    let firstName: String
-    let lastName: String
-    let phoneNumber: String
+    let gender: String?
     let profilePic: String
     let weight: Int
-    let weightGoal: Int
     let height: Int
-    let job: String
-    let fitnessLevel: String
+    let fitnessLevel: FitnessLevel.RawValue
     let fitnessGoal: String
+    let goalweight: Int?
     let healthCondition: [String]
     let allergy: [String]
 }

@@ -8,17 +8,19 @@
 import Foundation
 
 // MARK: - Data Models (Placeholders - replace with your actual data models)
-struct TrainerProfile: Identifiable {
+struct TrainerProfile: Identifiable{
     var id = UUID()
     let name: String
     let bio: String
     let email: String
     let experienceYears: Int
+    let subscribers: String
     let certifications: [String]
-    let availability: String
+    let availability: [String: Bool] // Day name: isAvailable
     let rating: Double
     let reviews: [Review]
-    let profileImageName: String // Placeholder for image name
+    let profileImageName: String
+    let specialties: [String]
 }
 
 struct Review: Identifiable {
