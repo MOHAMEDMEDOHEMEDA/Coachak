@@ -106,7 +106,7 @@ struct TrainingPlanView: View {
     }
     
     func fetchDayPlan(for day: String) async {
-        await dayPlanVM.fetchDayPlan(clientId: id, weekNumber: 1, dayName: day)
+        await dayPlanVM.fetchTrainerDayPlan(clientId: id, weekNumber: 1, dayName: day)
     }
     
     var headerSection: some View {

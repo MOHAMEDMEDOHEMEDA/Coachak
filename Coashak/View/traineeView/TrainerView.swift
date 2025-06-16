@@ -131,39 +131,52 @@ struct AvailabilityFixedSection: View {
 struct CertificationsSectionView: View {
     @StateObject private var viewModel = TrainerCertificateViewModel()
     let credintialId: String
-    
+
     var body: some View {
         SectionView(title: "Certifications", icon: "doc.text.fill", iconColor: .gray) {
             if viewModel.isLoading {
-                ProgressView("Loading certificates...")
+                HStack {
+                    ProgressView()
+                    Text("Loading certificates...")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+                .padding(.vertical, 8)
             } else if let error = viewModel.errorMessage {
                 Text(error)
                     .foregroundColor(.red)
+                    .padding(.vertical, 8)
             } else if viewModel.certificates.isEmpty {
                 Text("No certificates available.")
                     .foregroundColor(.gray)
+                    .font(.subheadline)
+                    .padding(.vertical, 8)
             } else {
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(spacing: 12) {
                     ForEach(viewModel.certificates) { cert in
-                        HStack {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.colorPurple)
-                            Text(cert.name)
+                        VStack(alignment: .leading, spacing: 6) {
+                            HStack(spacing: 8) {
+                                Label(cert.name, systemImage: "checkmark.seal.fill")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding(8)
+                                    .background(Color.colorPurple)
+                                    .cornerRadius(12)
+                                Spacer()
+                            }
+
+                            Text("Issued by \(cert.issuingOrganization)")
                                 .font(.subheadline)
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 4)
-                                .background(Color.purple.opacity(0.4))
-                                .cornerRadius(16)
-                                .foregroundColor(.white)
-                            Spacer()
-                            Text(cert.issuingOrganization)
-                                .font(.subheadline)
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 4)
-                                
+                                .foregroundColor(.secondary)
+                                .padding(.horizontal, 8)
                         }
+                        .padding()
+                        .background(Color(UIColor.secondarySystemBackground))
+                        .cornerRadius(16)
+                        .shadow(color: .black.opacity(0.05), radius: 4, x: 0, y: 2)
                     }
                 }
+                .padding(.top, 4)
             }
         }
         .onAppear {
@@ -171,6 +184,7 @@ struct CertificationsSectionView: View {
         }
     }
 }
+
 
 struct SubscribeButton: View {
     @Binding var navigateToSubsciptionPlans: Bool

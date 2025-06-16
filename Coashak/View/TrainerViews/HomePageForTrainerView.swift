@@ -151,6 +151,7 @@ struct HomePageForTrainerView: View {
                 .padding(.horizontal)
             }
             .padding(.vertical)
+            .padding(.bottom,100)
         }
         .onAppear {
             loadSampleData()

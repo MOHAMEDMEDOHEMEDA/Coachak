@@ -100,13 +100,8 @@ struct HomePageTraineeView: View {
                             .fontWeight(.bold)
                     }
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 12) {
-                            ForEach(samplePrograms, id: \.title) { program in
-                                ProgramCardView(program: program)
-                            }
-                        }
-                    }
+                    AutoScrollingProgramListView(samplePrograms: samplePrograms)
+
                     
                     HStack {
                         Image("icon_2")
@@ -158,8 +153,9 @@ struct HomePageTraineeView: View {
                         }
                         Image("personalizedMealplanImage")
                             .resizable()
+                            .frame(width: 180, height: 180)
                     }
-                    .frame(width: 343, height: 180, alignment: .center)
+                    //.frame(width: 343, height: 180, alignment: .center)
                     HStack {
                         Image(systemName: "message.fill")
                             .resizable()
@@ -178,6 +174,41 @@ struct HomePageTraineeView: View {
     }
     
 }
+
+struct AutoScrollingProgramListView: View {
+    let samplePrograms: [Program] // Your model
+    @State private var currentIndex = 0
+
+    var body: some View {
+        ScrollViewReader { proxy in
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(Array(samplePrograms.enumerated()), id: \.1.title) { index, program in
+                        ProgramCardView(program: program)
+                            .id(index) // 👈 assign unique id for scrolling
+                    }
+                }
+            }
+            .onAppear {
+                startAutoScroll(proxy: proxy)
+            }
+        }
+    }
+
+    private func startAutoScroll(proxy: ScrollViewProxy) {
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { timer in
+            withAnimation {
+                proxy.scrollTo(currentIndex, anchor: .center)
+            }
+
+            currentIndex += 1
+            if currentIndex >= samplePrograms.count {
+                currentIndex = 0 // loop back to start
+            }
+        }
+    }
+}
+
 
 // MARK: - ProgramCardView
 struct ProgramCardView: View {
@@ -333,17 +364,17 @@ import SwiftUI
 
 struct TrainersTraineeView: View {
     @StateObject private var viewModel = TrainerForClientsViewModel()
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        NavigationView {
             VStack(spacing: 0) {
                 // Top Gradient Background
                 LinearGradient(
-                    gradient: Gradient(colors: [Color.purple, Color.pink]),
+                    gradient: Gradient(colors: [Color.colorPurple, Color.colorPink]),
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
-                .cornerRadius(20,corners: .bottomRight)
+                .cornerRadius(70,corners: .bottomRight)
                 .frame(height: 200)
                 
                 
@@ -384,12 +415,25 @@ struct TrainersTraineeView: View {
                     }
                 }
             }
+            .navigationBarBackButtonHidden(true)
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button { dismiss() } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.colorPink)
+                    }
+                    .foregroundStyle(Color.colorPurple)
+                  
+                }
+            })
             .edgesIgnoringSafeArea(.top)
             .onAppear {
                 viewModel.fetchTrainers()
             }
-        }
+       
+        
     }
+    
 }
 
 struct MealPlanTraineeView: View {
@@ -430,26 +474,33 @@ struct FitBotAssistantCard: View {
                     
                     
                 }
-                
-                Text("Hi! I'm here to help with your fitness journey. Ask me about workouts, nutrition, or any health-related questions!")
-                    .padding(.top, 8)
-                    .padding(.bottom)
-                
-                NavigationLink(destination: ChatView()) {
-                    Text("Start Chatting")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(
-                            LinearGradient(colors: [Color.colorPurple, Color.white],
-                                           startPoint: .topLeading,
-                                           endPoint: .bottomTrailing)
-                        )
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
+                HStack{
+                    VStack{
+                        Text("Hi! I'm here to help with your fitness journey. Ask me about workouts, nutrition, or any health-related questions!")
+                            .padding(.top, 8)
+                            .padding(.bottom)
+                        
+                        NavigationLink(destination: ChatView()) {
+                            Text("Start Chatting")
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(
+                                    LinearGradient(colors: [Color.colorPurple, Color.white],
+                                                   startPoint: .topLeading,
+                                                   endPoint: .bottomTrailing)
+                                )
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+                    }
+                    Image("Ai_image")
+                        .resizable()
+                        .frame(width: 140, height: 140)
                 }
+//                .frame(width: 343, height: 240, alignment: .center)
+                    
             }
         }
-        .padding()
         .background(Color.white)
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)

@@ -22,7 +22,7 @@ struct CoashakApp: App {
     
     var body: some Scene {
         WindowGroup {
-            OnBoardingView()
+            SplashScreenView()
                 .environmentObject(AuthViewModel())
         }
     }

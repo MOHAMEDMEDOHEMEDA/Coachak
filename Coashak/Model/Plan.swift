@@ -58,8 +58,8 @@ struct SubscriptionResponse: Codable {
 struct Subscription: Codable, Identifiable, Hashable {
     let id: String
     let status: String
-    let trainingPlan: [String]
-    let nutritionPlan: [String]
+    let trainingPlan: [String]?
+    let nutritionPlan: [String]?
     let startedAt: String
     let expiresAt: String
     let createdAt: String

@@ -73,9 +73,11 @@ struct TrainerSubscriptionPlansView: View {
 //        .navigationDestination(for: PlanForResponse.self) { plan in
 //            PlanDetailsAndSubscribersView(plan: plan)
 //        }
-        .navigationDestination(isPresented: $navigateToCreationOfPlan) {
+        .sheet(isPresented: $navigateToCreationOfPlan) {
             CreatePlanView()
+                .presentationDetents([.medium, .large]) // Optional: controls sheet height
         }
+
         .onAppear {
             Task {
                 await viewModel.fetchPlans()

@@ -9,6 +9,7 @@
 
 import Foundation
 
+
 final class ChatAPIService {
     static let shared = ChatAPIService()
     private init() {}

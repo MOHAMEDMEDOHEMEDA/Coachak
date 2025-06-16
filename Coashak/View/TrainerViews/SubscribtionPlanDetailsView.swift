@@ -148,26 +148,22 @@ struct SubscriptionCardView: View {
             }
 
             HStack {
-                Button {
-                    // Message action
-                } label: {
-                    Label("Message", systemImage: "message")
-                        .frame(maxWidth: .infinity)
-                        .padding()
+                NavigationLink(destination: TraineeView(id: subscription.client.id)) {
+                    Label("Details", systemImage: "person.fill")
                         .foregroundColor(.purple)
-                        .background(Color.purple.opacity(0.05))
-                        .cornerRadius(12)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                        .background(Color.purple.opacity(0.1))
+                        .cornerRadius(8)
                 }
 
-                Button {
-                    // Details action
-                } label: {
-                    Label("Details", systemImage: "person.crop.circle")
-                        .frame(maxWidth: .infinity)
-                        .padding()
+                NavigationLink(destination: PlanSwitcherView(id: subscription.client.id)) {
+                    Label("Plans", systemImage: "newspaper")
                         .foregroundColor(.pink)
-                        .background(Color.pink.opacity(0.05))
-                        .cornerRadius(12)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                        .background(Color.pink.opacity(0.1))
+                        .cornerRadius(8)
                 }
             }
         }
@@ -181,7 +177,7 @@ struct SubscriptionCardView: View {
         let isoFormatter = ISO8601DateFormatter()
         if let date = isoFormatter.date(from: isoString) {
             let formatter = DateFormatter()
-            formatter.dateFormat = "dd MMM yyyy"
+            formatter.dateFormat = "yyyy mm dd"
             return formatter.string(from: date)
         }
         return isoString

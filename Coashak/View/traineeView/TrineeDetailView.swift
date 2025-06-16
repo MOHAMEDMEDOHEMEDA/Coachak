@@ -38,7 +38,7 @@ struct TraineeData1View: View {
     @State private var isOtherSelected: Bool = false
 
     @EnvironmentObject var viewModel: UpdateClientViewModel
-
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("What is your goal?")
@@ -101,7 +101,16 @@ struct TraineeData1View: View {
             ToolbarItem(placement: .principal) {
                 IndicatorTitle(currentTab: 0, numberOfTabs: 6)
             }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button { dismiss() } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.colorPink)
+                }
+                .foregroundStyle(Color.colorPurple)
+              
+            }
         }
+        .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -117,7 +126,7 @@ extension String {
 // MARK: - Fitness Level View
 struct TraineeData2View: View {
     @EnvironmentObject var viewModel: UpdateClientViewModel
-    
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("What is your current fitness level?")
@@ -154,7 +163,16 @@ struct TraineeData2View: View {
             ToolbarItem(placement: .principal) {
                 IndicatorTitle(currentTab: 1, numberOfTabs: 6)
             }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button { dismiss() } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.colorPink)
+                }
+                .foregroundStyle(Color.colorPurple)
+              
+            }
         }
+        .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -164,7 +182,7 @@ struct TraineeDataAgeView: View {
     @State private var age: Int = 20 // Local state for picker
     // Access the shared ViewModel from the environment
     @EnvironmentObject var viewModel: UpdateClientViewModel
-    
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack(spacing: 20) {
             Text("What is your age?")
@@ -220,7 +238,16 @@ struct TraineeDataAgeView: View {
             ToolbarItem(placement: .principal) {
                 IndicatorTitle(currentTab: 2, numberOfTabs: 6)
             }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button { dismiss() } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.colorPink)
+                }
+                .foregroundStyle(Color.colorPurple)
+              
+            }
         }
+        .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -234,7 +261,7 @@ struct TraineeDataHeightWeightView: View {
     @State private var activePicker: ActivePicker? = nil
     // Access the shared ViewModel from the environment
     @EnvironmentObject var viewModel: UpdateClientViewModel
-    
+    @Environment(\.dismiss) var dismiss
     enum ActivePicker {
         case height
         case weight
@@ -316,7 +343,16 @@ struct TraineeDataHeightWeightView: View {
                 ToolbarItem(placement: .principal) {
                     IndicatorTitle(currentTab: 3, numberOfTabs: 6)
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button { dismiss() } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.colorPink)
+                    }
+                    .foregroundStyle(Color.colorPurple)
+                  
+                }
             }
+            .navigationBarBackButtonHidden(true)
             
             // Height Picker Popup
             if activePicker == .height {
@@ -356,6 +392,7 @@ struct TraineeDataHeightWeightView: View {
 struct PickerPopupOverlay<Content: View>: View {
     @Binding var activePicker: TraineeDataHeightWeightView.ActivePicker?
     let content: () -> Content
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -384,6 +421,7 @@ struct HealthConditionsAndAllergiesView: View {
     @State private var otherAllergy: String = ""
     // Access the shared ViewModel from the environment
     @EnvironmentObject var viewModel: UpdateClientViewModel
+    @Environment(\.dismiss) var dismiss
     
     let healthConditionOptions = ["Diabetes", "Asthma", "Heart Conditions", "Other"]
     let allergyOptions = ["Pollen", "Dust", "Food", "Medicine", "Other"]
@@ -493,7 +531,16 @@ struct HealthConditionsAndAllergiesView: View {
             ToolbarItem(placement: .principal) {
                 IndicatorTitle(currentTab: 4, numberOfTabs: 6)
             }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button { dismiss() } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.colorPink)
+                }
+                .foregroundStyle(Color.colorPurple)
+              
+            }
         }
+        .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -508,7 +555,7 @@ struct TraineeData5View: View {
     @State private var showSourceTypeDialog = false
     // Access the shared ViewModel from the environment
     @EnvironmentObject var viewModel: UpdateClientViewModel
-    
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         // Removed NavigationStack as it's already inside a NavigationView from TraineeDataView
         VStack(spacing: 20) {
@@ -544,12 +591,12 @@ struct TraineeData5View: View {
                 Text("Upload Photo")
                     .font(.headline)
                     .padding(.horizontal)
-                // .foregroundColor(.white)
-                // .frame(width: 167, height: 32, alignment: .center)
-                // .background(Color.colorMidPink) // Example color
-                // .cornerRadius(8)
+                 .foregroundColor(.white)
+                 .frame(width: 167, height: 32, alignment: .center)
+                 .background(Color.colorMidPink) // Example color
+                 .cornerRadius(8)
             }
-            .buttonStyle(.bordered)
+//            .buttonStyle(.bordered)
             
             Spacer()
             
@@ -619,9 +666,18 @@ struct TraineeData5View: View {
             viewModel.profileImage = newImage
             print("✅ Profile image updated in ViewModel.")
         }
+        .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 IndicatorTitle(currentTab: 5, numberOfTabs: 6)
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button { dismiss() } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.colorPink)
+                }
+                .foregroundStyle(Color.colorPurple)
+              
             }
         }
         // Request permissions on appear

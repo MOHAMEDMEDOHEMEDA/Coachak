@@ -10,7 +10,7 @@ import SwiftUI
 struct EditTraineeProfileView: View {
     @ObservedObject var viewModel: ClientProfileViewModel
     @StateObject private var updateVM = UpdateClientViewModel()  // 1. Add update VM
-
+    @Environment(\.dismiss) var dismiss
     @State private var name: String = ""
     @State private var gender: String = ""
     @State private var birthday: Date = Date()
@@ -84,6 +84,17 @@ struct EditTraineeProfileView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button { dismiss() } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.colorPink)
+                }
+                .foregroundStyle(Color.colorPurple)
+              
+            }
+        })
         .background(Color.gray.opacity(0.1))
         .navigationTitle("Edit Profile")
         .confirmationDialog("Choose Photo Source", isPresented: $showPhotoSourceSelection) {

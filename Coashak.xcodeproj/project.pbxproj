@@ -34,6 +34,12 @@
 		7969244B2DFD8CE50063EE1D /* TrainerPlansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969244A2DFD8CE50063EE1D /* TrainerPlansViewModel.swift */; };
 		7969244F2DFD998A0063EE1D /* SubscriptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969244E2DFD998A0063EE1D /* SubscriptionResponse.swift */; };
 		796924512DFD99DA0063EE1D /* SubscriptionClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796924502DFD99DA0063EE1D /* SubscriptionClientViewModel.swift */; };
+		796924532DFF1F0E0063EE1D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796924522DFF1F0E0063EE1D /* SplashScreenView.swift */; };
+		796924572DFF228B0063EE1D /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796924562DFF228B0063EE1D /* MockURLProtocol.swift */; };
+		796924592DFF2A840063EE1D /* ChatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796924582DFF2A840063EE1D /* ChatViewModelTests.swift */; };
+		7969245B2DFF2AAD0063EE1D /* MockChatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969245A2DFF2AAD0063EE1D /* MockChatAPIService.swift */; };
+		7969245D2DFF68F60063EE1D /* EditPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969245C2DFF68F60063EE1D /* EditPlanView.swift */; };
+		7969245F2E0001D10063EE1D /* ClientSubscriptionPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7969245E2E0001D10063EE1D /* ClientSubscriptionPlansView.swift */; };
 		7974BF8B2DEA187D00B6CC17 /* ClientForUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974BF8A2DEA187D00B6CC17 /* ClientForUpdate.swift */; };
 		7974BF8F2DEA1BD000B6CC17 /* UpdateClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974BF8E2DEA1BD000B6CC17 /* UpdateClientViewModel.swift */; };
 		7974BF912DEA883200B6CC17 /* VerificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7974BF902DEA883200B6CC17 /* VerificationResponse.swift */; };
@@ -186,6 +192,12 @@
 		7969244A2DFD8CE50063EE1D /* TrainerPlansViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerPlansViewModel.swift; sourceTree = "<group>"; };
 		7969244E2DFD998A0063EE1D /* SubscriptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionResponse.swift; sourceTree = "<group>"; };
 		796924502DFD99DA0063EE1D /* SubscriptionClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionClientViewModel.swift; sourceTree = "<group>"; };
+		796924522DFF1F0E0063EE1D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		796924562DFF228B0063EE1D /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		796924582DFF2A840063EE1D /* ChatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModelTests.swift; sourceTree = "<group>"; };
+		7969245A2DFF2AAD0063EE1D /* MockChatAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockChatAPIService.swift; sourceTree = "<group>"; };
+		7969245C2DFF68F60063EE1D /* EditPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlanView.swift; sourceTree = "<group>"; };
+		7969245E2E0001D10063EE1D /* ClientSubscriptionPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSubscriptionPlansView.swift; sourceTree = "<group>"; };
 		7974BF8A2DEA187D00B6CC17 /* ClientForUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientForUpdate.swift; sourceTree = "<group>"; };
 		7974BF8E2DEA1BD000B6CC17 /* UpdateClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateClientViewModel.swift; sourceTree = "<group>"; };
 		7974BF902DEA883200B6CC17 /* VerificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationResponse.swift; sourceTree = "<group>"; };
@@ -343,6 +355,7 @@
 		7974BF9B2DEBF0EC00B6CC17 /* traineeView */ = {
 			isa = PBXGroup;
 			children = (
+				7969245E2E0001D10063EE1D /* ClientSubscriptionPlansView.swift */,
 				79EBB8002DF622F500A7C70E /* ChatView.swift */,
 				79C7F24E2D05ABDB00FE9D3A /* TrineeDetailView.swift */,
 				79A14A9B2D17762000BC550B /* TraineeProfileView.swift */,
@@ -392,6 +405,7 @@
 		79EBB8102DF7AD7700A7C70E /* TrainerViews */ = {
 			isa = PBXGroup;
 			children = (
+				7969245C2DFF68F60063EE1D /* EditPlanView.swift */,
 				79EBB81D2DF8C37E00A7C70E /* CreatePlanView.swift */,
 				79EBB8192DF7E55000A7C70E /* ClientsView.swift */,
 				79EBB8172DF7D17300A7C70E /* MainTrainerTabView.swift */,
@@ -457,6 +471,9 @@
 		79FEBF182CCBF84100E54DB4 /* CoashakTests */ = {
 			isa = PBXGroup;
 			children = (
+				7969245A2DFF2AAD0063EE1D /* MockChatAPIService.swift */,
+				796924582DFF2A840063EE1D /* ChatViewModelTests.swift */,
+				796924562DFF228B0063EE1D /* MockURLProtocol.swift */,
 				79FEBF192CCBF84100E54DB4 /* CoashakTests.swift */,
 				79BF0D8C2D3CF4F700833B20 /* SignupViewModelTests.swift */,
 			);
@@ -512,6 +529,7 @@
 		79FEBF332CCDCA1D00E54DB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				796924522DFF1F0E0063EE1D /* SplashScreenView.swift */,
 				79FEBF062CCBF83D00E54DB4 /* CoashakApp.swift */,
 				7974BF9A2DEBF0B600B6CC17 /* authView */,
 				7974BF9B2DEBF0EC00B6CC17 /* traineeView */,
@@ -763,6 +781,7 @@
 				79FD90B42DD8407700F21262 /* AuthForChatViewModel.swift in Sources */,
 				79FEBF4B2CCDFF0700E54DB4 /* RestorePassByEmailView.swift in Sources */,
 				79EBB80D2DF764C400A7C70E /* UpdateTrainerViewModel.swift in Sources */,
+				7969245F2E0001D10063EE1D /* ClientSubscriptionPlansView.swift in Sources */,
 				79EBB7FF2DF620E900A7C70E /* ChatViewModel.swift in Sources */,
 				796924472DFD89410063EE1D /* TrainerCertificateViewModel.swift in Sources */,
 				79EBB8162DF7BFE300A7C70E /* EditTrainerProfileView.swift in Sources */,
@@ -792,6 +811,7 @@
 				79EBB8032DF6244800A7C70E /* ChatModels.swift in Sources */,
 				79EBB81A2DF7E55000A7C70E /* ClientsView.swift in Sources */,
 				79FEBF3B2CCDCB2600E54DB4 /* CustomButtonsStyles.swift in Sources */,
+				7969245D2DFF68F60063EE1D /* EditPlanView.swift in Sources */,
 				7974BF972DEBCE6500B6CC17 /* RefreshTokenViewModel.swift in Sources */,
 				79FEBF072CCBF83D00E54DB4 /* CoashakApp.swift in Sources */,
 				79FEBF492CCDFC4200E54DB4 /* EmailVerficationView.swift in Sources */,
@@ -805,6 +825,7 @@
 				79EBB8182DF7D18000A7C70E /* MainTrainerTabView.swift in Sources */,
 				79EBB8122DF7B27D00A7C70E /* TrainerProfileResponse.swift in Sources */,
 				7974BFA02DED035100B6CC17 /* AIMealRequestModel.swift in Sources */,
+				796924532DFF1F0E0063EE1D /* SplashScreenView.swift in Sources */,
 				79FD90B62DD8410D00F21262 /* LoginViewForChat.swift in Sources */,
 				79EBB80B2DF763AE00A7C70E /* TrainerForUpdateModel.swift in Sources */,
 				791104052DD14A5C00A5DB36 /* TraineeView.swift in Sources */,
@@ -836,7 +857,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7969245B2DFF2AAD0063EE1D /* MockChatAPIService.swift in Sources */,
+				796924572DFF228B0063EE1D /* MockURLProtocol.swift in Sources */,
 				79BF0D8D2D3CF4F700833B20 /* SignupViewModelTests.swift in Sources */,
+				796924592DFF2A840063EE1D /* ChatViewModelTests.swift in Sources */,
 				79FEBF1A2CCBF84100E54DB4 /* CoashakTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ struct MainTraineeTabView: View {
                     case 0: HomePageTraineeView()
                     case 1: MealPlanFormView()
                     case 2: ChatView()
-                    case 3:DailyScheduleView()
+                    case 3:ClientPlanDetailsView()
                     case 4: TraineeProfileView().environmentObject(ClientProfileViewModel())
                     default: HomePageTraineeView()
                     }

@@ -11,9 +11,9 @@ import SwiftUI
 struct DailyScheduleView: View {
     @State private var selectedDay = "sunday"
     @State private var showingTraining = true
-    var userId: String {
-           UserDefaults.standard.string(forKey: "user_id") ?? ""
-       }
+    let trainer: String
+    let userId: String
+    
     var body: some View {
         VStack(alignment: .leading) {
             HeaderView(title: showingTraining ? "Training Schedule" : "Meals Schedule")
@@ -23,9 +23,9 @@ struct DailyScheduleView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     if showingTraining {
-                        UserTrainingPlanView(userId: userId)
+                        UserTrainingPlanView(trainer: trainer, userID: userId)
                     } else {
-                        ReadOnlyNutritionPlanView(userId: userId)
+                        ReadOnlyNutritionPlanView(trainer: trainer, userID: userId)
                     }
                 }
                 .padding()
@@ -95,7 +95,8 @@ struct HeaderView: View {
 
 // MARK: - training plan view for client
 struct UserTrainingPlanView: View {
-    let userId: String
+    let trainer: String
+    let userID: String
     @StateObject private var userProfileVM = UserProfileViewModel()
     @StateObject private var dayPlanVM = DayPlanViewModel()
     @State private var selectedDay = "sunday"
@@ -145,7 +146,7 @@ struct UserTrainingPlanView: View {
             Spacer()
         }
         .task {
-            userProfileVM.fetchUserProfile(userId: userId)
+            userProfileVM.fetchUserProfile(userId: userID)
             await fetchDayPlan(for: selectedDay)
         }
         .onChange(of: selectedDay) { newDay in
@@ -154,7 +155,7 @@ struct UserTrainingPlanView: View {
     }
 
     private func fetchDayPlan(for day: String) async {
-        await dayPlanVM.fetchDayPlan(clientId: userId, weekNumber: 1, dayName: day)
+        await dayPlanVM.fetchClientDayPlan(TrainerId: trainer, weekNumber: 1, dayName: day)
     }
 
     private var headerSection: some View {
@@ -223,7 +224,8 @@ struct WorkoutReadOnlyCard: View {
 
 struct ReadOnlyNutritionPlanView: View {
     // Get client ID from UserDefaults
-    let userId: String
+    let trainer: String
+    let userID: String
     @StateObject private var userProfileVM = UserProfileViewModel()
     @StateObject private var dayPlanVM = DayPlanViewModel()
     @State private var selectedDay = "sunday"
@@ -279,7 +281,7 @@ struct ReadOnlyNutritionPlanView: View {
             }
         }
         .task {
-            userProfileVM.fetchUserProfile(userId: userId)
+            userProfileVM.fetchUserProfile(userId: userID)
             await fetchDayPlan(for: selectedDay)
         }
         .onChange(of: selectedDay) { newDay in
@@ -288,29 +290,37 @@ struct ReadOnlyNutritionPlanView: View {
     }
 
     func fetchDayPlan(for day: String) async {
-        await dayPlanVM.fetchDayPlan(clientId: userId, weekNumber: 1, dayName: day)
+        await dayPlanVM.fetchClientDayPlan(TrainerId: trainer, weekNumber: 1, dayName: day)
     }
 
-    var headerSection: some View {
+    private var headerSection: some View {
         Group {
             if let trainee = userProfileVM.trainee {
-                HStack(spacing: 12) {
-                    AsyncImageSafe(urlString: trainee.profilePhoto)
-                        .frame(width: 60, height: 60)
-                        .clipShape(Circle())
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack(spacing: 12) {
+                        AsyncImageSafe(urlString: trainee.profilePhoto)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
 
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(trainee.name)
-                            .font(.title3.bold())
-                        Text("Goal: \(trainee.fitnessGoal)")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                        VStack(alignment: .leading) {
+                            Text(trainee.name)
+                                .font(.headline)
+                            Text("Goal: \(trainee.fitnessGoal)")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
                     }
-                    Spacer()
+
+                    HStack {
+                        ProfileStat(title: "Age", value: "\(trainee.age)")
+                        ProfileStat(title: "Height", value: trainee.heightText)
+                        ProfileStat(title: "Weight", value: trainee.weightText)
+                    }
                 }
-                .padding()
+                .padding(.horizontal)
             } else {
-                ProgressView("Loading profile...")
+                Text("Loading user data...")
+                    .foregroundColor(.gray)
             }
         }
     }
@@ -318,6 +328,4 @@ struct ReadOnlyNutritionPlanView: View {
 
 
 
-#Preview {
-    DailyScheduleView()
-}
+

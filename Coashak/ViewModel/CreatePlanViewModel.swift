@@ -19,7 +19,7 @@ class CreatePlanViewModel: ObservableObject {
     @Published var description: String = ""
     @Published var price: String = ""
     @Published var durationInWeeks: String = ""
-    @Published var hasNutritionPlan: Bool? = false
+    @Published var hasNutritionPlan: Bool = false
     @Published var hasTrainingPlan: Bool = false
     
     // UI feedback
@@ -28,7 +28,7 @@ class CreatePlanViewModel: ObservableObject {
     @Published var successMessage: String?
 
     func savePlan() async {
-        guard let priceInt = Int(price), let durationInt = Int(durationInWeeks), let hasNutrition = hasNutritionPlan else {
+        guard let priceInt = Int(price), let durationInt = Int(durationInWeeks)else {
             errorMessage = "Please complete all fields correctly."
             return
         }
@@ -42,7 +42,7 @@ class CreatePlanViewModel: ObservableObject {
             description: description,
             price: priceInt,
             durationInWeeks: durationInt,
-            hasNutritionPlan: hasNutrition,
+            hasNutritionPlan: hasNutritionPlan,
             hasTrainingPlan: hasTrainingPlan
         )
 

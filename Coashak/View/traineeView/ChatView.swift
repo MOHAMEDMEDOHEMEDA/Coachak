@@ -100,6 +100,8 @@ struct ChatView: View {
             .padding()
             .padding(.bottom, 100)
         }
+        .navigationBarBackButtonHidden(true)
+
         .navigationTitle("AI Chat")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {

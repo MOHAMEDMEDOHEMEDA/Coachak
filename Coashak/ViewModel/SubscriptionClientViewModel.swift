@@ -9,10 +9,16 @@
 import Foundation
 
 class SubscriptionClientViewModel: ObservableObject {
+    private var session: URLSession
+
     @Published var subscription: SubscriptionClient?
     @Published var isLoading = false
     @Published var errorMessage: String?
-    
+
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+
     func subscribeToPlan(planId: String, completion: @escaping (Result<String, Error>) -> Void) {
         guard let url = URL(string: "https://coachak-backendend.onrender.com/api/v1/subscriptions") else {
             completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
@@ -38,41 +44,25 @@ class SubscriptionClientViewModel: ObservableObject {
             return
         }
 
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 if let error = error {
-                    print("❌ Network error: \(error.localizedDescription)")
                     completion(.failure(error))
                     return
                 }
 
-                if let httpResponse = response as? HTTPURLResponse {
-                    print("📡 Status Code: \(httpResponse.statusCode)")
-                    print("📎 Headers: \(httpResponse.allHeaderFields)")
-                }
-
                 if let data = data {
-                    print("🧾 Raw Response:")
-                    if let rawString = String(data: data, encoding: .utf8) {
-                        print(rawString)
-                    } else {
-                        print("⚠️ Unable to decode response as UTF-8 string.")
-                    }
-
                     do {
                         let decoded = try JSONDecoder().decode(SubscriptionClientResponse.self, from: data)
                         self.subscription = decoded.subscription
                         completion(.success(decoded.message))
                     } catch {
-                        print("❌ Decoding error: \(error.localizedDescription)")
                         completion(.failure(error))
                     }
                 } else {
-                    print("⚠️ No data received.")
                     completion(.failure(NSError(domain: "", code: -4, userInfo: [NSLocalizedDescriptionKey: "No response data"])))
                 }
             }
         }.resume()
     }
-
 }

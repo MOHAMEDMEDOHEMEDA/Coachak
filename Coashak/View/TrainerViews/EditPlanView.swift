@@ -1,4 +1,12 @@
 //
+//  CreatePlanView 2.swift
+//  Coashak
+//
+//  Created by Mohamed Magdy on 15/06/2025.
+//
+
+
+//
 //  CreatePlanView.swift
 //  Coashak
 //
@@ -7,7 +15,7 @@
 
 import SwiftUI
 
-struct CreatePlanView: View {
+struct EditPlanView: View {
     @StateObject private var viewModel = CreatePlanViewModel()
     @State private var selectedImage: UIImage? = nil
     @State private var isShowingImagePicker = false
@@ -24,7 +32,7 @@ struct CreatePlanView: View {
                 }
 
                 VStack(alignment: .leading,spacing: 20) {
-                    Text("Create Plan")
+                    Text("Edit Plan")
                         .font(.title).bold()
                         .padding(.top)
 
@@ -78,7 +86,7 @@ struct CreatePlanView: View {
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(12)
 
-                        Button("Create Plan") {
+                        Button("Edit Plan") {
                             Task {
                                 await viewModel.savePlan()
                                 dismiss()
@@ -134,41 +142,10 @@ struct CreatePlanView: View {
     }
 }
 
-struct CheckBoxCard: View {
-    let title: String
-    let subtitle: String
-    @Binding var isSelected: Bool
-    let color: Color
-    let icon: String
 
-    var body: some View {
-        Button(action: { isSelected.toggle() }) {
-            HStack(alignment: .top, spacing: 12) {
-                Image(systemName: icon)
-                    .foregroundColor(color)
-                    .padding(8)
-                    .background(color.opacity(0.1))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
 
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(title).bold()
-                    Text(subtitle).font(.caption).foregroundColor(.gray)
-                }
-
-                Spacer()
-
-                Image(systemName: isSelected ? "checkmark.square" : "square")
-                    .foregroundColor(color)
-            }
-            .padding()
-            .background(color.opacity(0.1))
-            .cornerRadius(12)
-        }
-    }
-}
-
-struct CreatePlanView_Previews: PreviewProvider {
+struct EditPlanView_Previews: PreviewProvider {
     static var previews: some View {
-        CreatePlanView()
+        EditPlanView()
     }
 }

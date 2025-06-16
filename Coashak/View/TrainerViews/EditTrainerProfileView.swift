@@ -124,6 +124,21 @@ struct EditTrainerProfileView: View {
                 certVM: certVM
             )
         }
+        .alert(isPresented: Binding<Bool>(
+            get: { updateVM.errorMessage != nil || updateVM.updateSuccess },
+            set: { _ in
+                if updateVM.updateSuccess {
+                    updateVM.updateSuccess = false
+                }
+                updateVM.errorMessage = nil
+            }
+        )) {
+            if let errorMessage = updateVM.errorMessage {
+                return Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+            } else {
+                return Alert(title: Text("Success"), message: Text("Profile updated successfully!"), dismissButton: .default(Text("OK")))
+            }
+        }
     }
 
     // MARK: - Save Profile Logic
