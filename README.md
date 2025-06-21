@@ -57,7 +57,7 @@ Coashak/
 
 ### Prerequisites
 - Xcode 14.0 or later
-- iOS 15.0 or later
+- iOS 17.0 or later
 - Swift 5.7 or later
 
 ### Installation
@@ -75,9 +75,10 @@ Coashak/
 
 3. **Run the app on a simulator or a real iOS device**
 
-## 🎨 Screenshots
+## 🎨 demo
 
-*(Coming Soon)*
+[![Watch the demo](https://img.youtube.com/vi/7oBeee7RW7o/0.jpg)](https://youtu.be/7oBeee7RW7o)
+
 
 ## 🤝 Contributing
 
